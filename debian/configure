@@ -1,0 +1,244 @@
+#!/bin/bash
+# dpkg configuration script for linuxcnc
+# Copyright (C) 2006 Jeff Epler
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# When used to produce a debian package, this file is a script "used to
+# control compilation and installation of the executable"
+
+usage () {
+    P=${0##*/}
+    cat <<EOF
+$P: Set up debian/ files to build for a particular kernel
+
+Usage:
+    $P uspace
+        Build for a userspace realtime systems or simulator
+
+    $P sim
+        Deprecated synonym for '$P uspace'
+
+    $P [kernel-version]
+        Build for the installed RTAI realtime kernel specified by
+        [kernel-version], for example "3.4.9-rtai-686-pae"
+
+    $P -r
+        Build for the currently running kernel for RTAI realtime only
+
+    $P -a
+        If the currently running kernel has realtime extensions, use it.
+        Otherwise use any available realtime kernel it can find.
+EOF
+}
+
+cd "${0%/*}"
+
+if [ $# -ne 1 -o "$1" == "-h" -o "$1" == "-help" -o "$1" == "--help" ]; then
+    usage
+    if [ $# -ne 1 ]; then
+        exit 1
+    fi
+    exit 0
+fi
+
+if [ $1 = "-r" ]; then
+    set -- `uname -r`
+elif [ $1 = "-a" ]; then
+    KERNEL="$(uname -r)"
+    if [ ! -d "/usr/realtime-$KERNEL" ]; then
+        KERNEL=$(ls -1d /usr/realtime-* 2> /dev/null | cut -d - -f 2- | head -1)
+        if [ -z "$KERNEL" ]; then
+            echo "no realtime kernels found!"
+            exit 1
+        fi
+    fi
+    set -- $KERNEL
+fi
+
+TARGET=$1
+
+# for example: "3.16.0-9"
+KERNEL_VERSION_ABI=${TARGET%-rtai-*}
+
+MODULE_PATH=usr/realtime-$1/modules/linuxcnc
+MODULE_EXT=.ko
+KERNEL_DEPENDS="linux-image-$1,rtai-modules-$TARGET|rtai-modules-$KERNEL_VERSION_ABI"
+KERNEL_HEADERS=linux-headers-$1
+EXTRA_FILES="usr/bin/linuxcnc_module_helper"
+KERNEL_VERSION=$1
+DRIVERS=drivers.files.in
+PYTHON_VERSION=$(python -c 'import sys; print sys.version[:3]')
+PYTHON_VERSION_NEXT=$(python -c 'import sys; print sys.version[:2] + str(1+int(sys.version[2]))')
+LIBREADLINE_DEV=libreadline-gplv2-dev
+
+# hope this works on other systems too
+DISTRIB_NAME=
+if [ "$(which lsb_release)" != "" ]; then
+    DISTRIB_NAME="$(lsb_release -s -i)-$(lsb_release -s -r)"
+elif [ -f /etc/lsb-release ]; then
+    source /etc/lsb-release
+    DISTRIB_NAME=$DISTRIB_ID-$DISTRIB_RELEASE
+fi
+
+if [ -d extras-$DISTRIB_NAME/linuxcnc.files ]; then
+	EXTRAS=extras-$DISTRIB_NAME/linuxcnc.files
+else
+	EXTRAS=extras
+fi
+
+PYTHON_PACKAGING=dh_pysupport
+PYTHON_GST=python-gst0.10,gstreamer0.10-plugins-base
+
+case $DISTRIB_NAME in
+Ubuntu-14.*|Ubuntu-15.04|LinuxMint-17.*) # Trusty Tahr (LTS) through Vivid
+	EXTRA_BUILD=dvipng,texlive-extra-utils,texlive-latex-recommended,texlive-fonts-recommended,ghostscript,imagemagick,texlive-font-utils,module-init-tools,python-support
+	TCLTK_VERSION=8.6
+	;;
+Ubuntu-11.04|Ubuntu-12.04|Ubuntu-12.10) # Natty Narwhal, Precise Pangolin (LTS), Quantal Quetzal
+	EXTRA_BUILD=dvipng,texlive-extra-utils,texlive-latex-recommended,texlive-fonts-recommended,ghostscript,imagemagick,texlive-font-utils,module-init-tools,libgnomeprintui2.2-dev,python-support
+	TCLTK_VERSION=8.5
+	;;
+Ubuntu-10.04)
+        LIBREADLINE_DEV=libreadline5-dev
+	EXTRA_BUILD=dvipng,texlive-extra-utils,texlive-latex-recommended,texlive-fonts-recommended,ghostscript,imagemagick,texlive-font-utils,module-init-tools,libgnomeprintui2.2-dev,python-support
+	TCLTK_VERSION=8.5
+	;;
+Ubuntu-9.10)
+        LIBREADLINE_DEV=libreadline5-dev
+	EXTRA_BUILD=dvipng,texlive-extra-utils,texlive-latex-recommended,texlive-fonts-recommended,ghostscript,imagemagick,module-init-tools,libgnomeprintui2.2-dev,python-support
+	TCLTK_VERSION=8.5
+	;;
+Ubuntu-8.04)
+        LIBREADLINE_DEV=libreadline5-dev
+	EXTRA_BUILD=dvipng,texlive-extra-utils,texlive-latex-recommended,texlive-fonts-recommended,ghostscript,imagemagick,module-init-tools,libgnomeprintui2.2-dev,python-support
+	TCLTK_VERSION=8.4
+	;;
+Debian-testing)
+	EXTRA_BUILD=dvipng,texlive-extra-utils,texlive-latex-recommended,texlive-fonts-recommended,ghostscript,imagemagick,texlive-lang-polish,texlive-font-utils,kmod,dh-python
+	TCLTK_VERSION=8.6
+        PYTHON_PACKAGING=dh_python2
+        PYTHON_GST=python-gst-1.0,gstreamer1.0-plugins-base
+	;;
+Debian-9.*)
+	EXTRA_BUILD=dvipng,texlive-extra-utils,texlive-latex-recommended,texlive-fonts-recommended,ghostscript,imagemagick,texlive-lang-polish,texlive-font-utils,kmod,dh-python,asciidoc-dblatex
+	TCLTK_VERSION=8.6
+        PYTHON_PACKAGING=dh_python2
+        PYTHON_GST=python-gst-1.0,gstreamer1.0-plugins-base
+        ;;
+Debian-8.*)
+	EXTRA_BUILD=dvipng,texlive-extra-utils,texlive-latex-recommended,texlive-fonts-recommended,ghostscript,imagemagick,texlive-lang-polish,texlive-font-utils,kmod,dh-python
+	TCLTK_VERSION=8.6
+        PYTHON_PACKAGING=dh_python2
+        ;;
+Debian-7.*)
+	EXTRA_BUILD=dvipng,texlive-extra-utils,texlive-latex-recommended,texlive-fonts-recommended,ghostscript,imagemagick,texlive-lang-polish,texlive-font-utils,kmod,libgnomeprintui2.2-dev,python-support
+	TCLTK_VERSION=8.5
+	;;
+Debian-6.0*)
+	EXTRA_BUILD=dvipng,module-init-tools,libgnomeprintui2.2-dev,python-support
+	TCLTK_VERSION=8.5
+	;;
+Debian-5.0*)
+	EXTRA_BUILD=dvipng,module-init-tools,libgnomeprintui2.2-dev,python-support
+	TCLTK_VERSION=8.4
+	;;
+*)
+        echo "unknown distribution: $DISTRIB_NAME"
+        echo "configuration may be wrong!"
+	EXTRA_BUILD=dvipng,kmod,libgnomeprintui2.2-dev,python-support
+	TCLTK_VERSION=8.4
+	;;
+esac
+
+DOC_BUILD=
+MAIN_PACKAGE_NAME=linuxcnc
+OTHER_MAIN_PACKAGE_NAME=linuxcnc-uspace
+EXTRA_RECOMMENDS=hostmot2-firmware-all
+case $TARGET in
+    uspace|sim)
+	TARGET=uspace
+        MODULE_PATH=usr/lib/linuxcnc/modules
+	MODULE_EXT=.so
+	KERNEL_DEPENDS=libudev-dev,iptables
+	KERNEL_HEADERS=
+	KERNEL_VERSION=uspace
+	DRIVERS=
+        EXTRA_FILES="usr/bin/rtapi_app"
+	DISTRIB_NAME=uspace-$DISTRIB_NAME
+	MAIN_PACKAGE_NAME=linuxcnc-uspace
+        OTHER_MAIN_PACKAGE_NAME=linuxcnc
+
+        EXTRA_RECOMMENDS="$EXTRA_RECOMMENDS, linux-image-rt-amd64 [linux-amd64], linux-image-rt-686-pae [linux-i386]"
+    ;;
+    2.6.12-magma)
+        KERNEL_HEADERS=$KERNEL_HEADERS,gcc-3.4
+    ;;
+    2.6.15-magma)
+        KERNEL_HEADERS=$KERNEL_HEADERS,gcc-4.0
+    ;;
+    2.6.22.6-magma|2.6.24-16-rtai)
+        KERNEL_HEADERS="$KERNEL_HEADERS"
+    ;;
+    2.6.24-16-rtai)
+        KERNEL_HEADERS=$KERNEL_HEADERS,gcc-4.2
+    ;;
+    2.6.32-122-rtai|3.4-9-rtai-686-pae|3.16.0-9-rtai-*) ;;
+    *)
+	echo "your kernel '$TARGET' is not known. There might be needed dependencies which won't get set automatically."
+esac
+
+subst () {
+sed -e "s|@MODULE_PATH@|$MODULE_PATH|g" \
+    -e "s|@MODULE_EXT@|$MODULE_EXT|g" \
+    -e "s|@KERNEL_VERSION@|$KERNEL_VERSION|g" \
+    -e "s/@KERNEL_DEPENDS@/$KERNEL_DEPENDS/g" \
+    -e "s|@KERNEL_HEADERS@|$KERNEL_HEADERS|g" \
+    -e "s|@EXTRA_BUILD@|$EXTRA_BUILD|g" \
+    -e "s|@LIBREADLINE_DEV@|$LIBREADLINE_DEV|g" \
+    -e "s|@EXTRA_RECOMMENDS@|$EXTRA_RECOMMENDS|g" \
+    -e "s|@MAIN_PACKAGE_NAME@|$MAIN_PACKAGE_NAME|g" \
+    -e "s|@OTHER_MAIN_PACKAGE_NAME@|$OTHER_MAIN_PACKAGE_NAME|g" \
+    -e "s|@EXTRAS@|$EXTRAS|g" \
+    -e "s|@EXTRA_FILES@|$EXTRA_FILES|g" \
+    -e "s|@DISTRIB_NAME@|$DISTRIB_NAME|g" \
+    -e "s|@TARGET@|$TARGET|g" \
+    -e "s|@PYTHON_VERSION@|$PYTHON_VERSION|g" \
+    -e "s|@TCLTK_VERSION@|$TCLTK_VERSION|g" \
+    -e "s|@PYTHON_VERSION_NEXT@|$PYTHON_VERSION_NEXT|g" \
+    -e "s|@PYTHON_GST@|$PYTHON_GST|g" \
+    -e "s|@PYTHON_PACKAGING@|$PYTHON_PACKAGING|g" \
+    $*
+}
+
+subst control.in > control
+
+if [ "$TARGET" == "uspace" ]; then
+    cp linuxcnc-dev.files.in linuxcnc-uspace-dev.files
+else
+    cp linuxcnc-dev.files.in linuxcnc-dev.files
+    echo "$MODULE_PATH/Module.symvers" >> linuxcnc-dev.files
+fi
+
+subst rules.in > rules; chmod +x rules
+
+if [ -f $EXTRAS/linuxcnc.files ]; then
+    subst linuxcnc.files.in $DRIVERS $EXTRAS/linuxcnc.files > $MAIN_PACKAGE_NAME.files
+else
+    subst linuxcnc.files.in $DRIVERS > $MAIN_PACKAGE_NAME.files
+fi
+
+DOCS_PACKAGES=$(echo linuxcnc-doc-{en,fr,es})
+for P in $DOCS_PACKAGES; do
+    if [ -f $EXTRAS/$P.files ]; then
+        cat $P.files.in $EXTRAS/$P.files > $P.files
+    else
+        cat $P.files.in > $P.files
+    fi
+done
+
+rm -f ../build-stamp
+echo "successfully configured for '$DISTRIB_NAME'-'$TARGET'.."
