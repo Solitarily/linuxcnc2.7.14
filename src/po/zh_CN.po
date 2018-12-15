@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: LinuxCNC EMC2.7.11\n"
+"Project-Id-Version: LinuxCNC EMC2.7.14\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-06-16 21:10+0800\n"
-"PO-Revision-Date: 2017-06-18 16:48+0800\n"
+"POT-Creation-Date: 2018-12-10 11:10+0800\n"
+"PO-Revision-Date: 2018-12-14 15:06+0800\n"
 "Last-Translator: David <davidshore@yeah.net>\n"
 "Language-Team: David <davidshore@yeah.net>\n"
 "Language: zh_CN\n"
@@ -445,6 +445,7 @@ msgstr "定位"
 #: src/emc/usr_intf/pncconf/z_motor.glade:1337
 #: src/emc/usr_intf/pncconf/a_motor.glade:1337
 #: src/emc/usr_intf/pncconf/s_motor.glade:1541
+#: lib/python/gladevcp/gladevcp-test.glade:222
 msgid "Scale"
 msgstr "比例"
 
@@ -1141,12 +1142,12 @@ msgid "Okay"
 msgstr "好的"
 
 #: src/hal/classicladder/classicladder_gtk.c:648 tcl/bin/pickconfig.tcl:606
-#: src/emc/usr_intf/axis/scripts/axis.py:137
+#: tcl/tooledit.tcl:906 src/emc/usr_intf/axis/scripts/axis.py:137
 #: src/emc/usr_intf/axis/scripts/image-to-gcode.py:563
 msgid "Yes"
 msgstr "确定"
 
-#: src/hal/classicladder/classicladder_gtk.c:649
+#: src/hal/classicladder/classicladder_gtk.c:649 tcl/tooledit.tcl:906
 #: src/emc/usr_intf/axis/scripts/axis.py:137
 msgid "No"
 msgstr "取消"
@@ -1288,6 +1289,7 @@ msgstr "配置硬件发生错误！"
 #: src/hal/classicladder/symbols_gtk.c:121
 #: src/hal/classicladder/symbols_gtk.c:137
 #: src/hal/classicladder/symbols_gtk.c:139 tcl/tklinuxcnc.tcl:2010
+#: tcl/tooledit.tcl:889
 msgid "Error"
 msgstr "错误"
 
@@ -2119,41 +2121,41 @@ msgstr "下移"
 #: src/hal/classicladder/protocol_modbus_master.c:276
 #, c-format
 msgid "ERROR CLASSICLADDER-     MODBUS-EXCEPTION RECEIVED:%X (Excep=%X)\n"
-msgstr ""
+msgstr "错误 CLASSICLADDER-     MODBUS-收到的例外:%X (Excep=%X)\n"
 
 #: src/hal/classicladder/protocol_modbus_master.c:282
 #, c-format
 msgid ""
 "ERROR CLASSICLADDER-    MODBUS -Function code received from slave was not "
 "the same as requested!\n"
-msgstr ""
+msgstr "错误 CLASSICLADDER-    MODBUS -从从站接收的功能代码与请求的不同!\n"
 
 #: src/hal/classicladder/protocol_modbus_master.c:366
 #, c-format
 msgid ""
 "INFO CLASSICLADDER-   MODBUS -Echo back from slave #%s is correct "
 "(data=257).\n"
-msgstr ""
+msgstr "信息 CLASSICLADDER-   MODBUS -从从站#%s回发正确(data=257)。\n"
 
 #: src/hal/classicladder/protocol_modbus_master.c:369
 #, c-format
 msgid "ERROR CLASSICLADDER-    MODBUS -Echo back from slave #%s is WRONG.\n"
-msgstr ""
+msgstr "错误 CLASSICLADDER-    MODBUS -来自从站 #%s is 的回显错误。\n"
 
 #: src/hal/classicladder/protocol_modbus_master.c:418
 #, c-format
 msgid "INFO CLASSICLADDER-   MODBUS function code not reconized"
-msgstr ""
+msgstr "信息 CLASSICLADDER-   MODBUS 功能代码未重新配置"
 
 #: src/hal/classicladder/protocol_modbus_master.c:423
 #, c-format
 msgid "INFO CLASSICLADDER-   MODBUS Length we should receive=%d (+3)\n"
-msgstr ""
+msgstr "信息 CLASSICLADDER-   MODBUS 我们应该收到的长度=%d (+3)\n"
 
 #: src/hal/classicladder/protocol_modbus_master.c:557
 #, c-format
 msgid "INFO CLASSICLADDER-   Modbus I/O module to send: Lgt=%d <-  "
-msgstr ""
+msgstr "信息 CLASSICLADDER-   要发送 Modbus I/O 模块: Lgt=%d <-  "
 
 #: src/hal/classicladder/protocol_modbus_master.c:560
 #, c-format
@@ -2168,7 +2170,7 @@ msgstr "功能代码 -%X  数据-"
 #: src/hal/classicladder/protocol_modbus_master.c:576
 #, c-format
 msgid "INFO CLASSICLADDER-   Modbus I/O module received: Lgt=%d -> "
-msgstr ""
+msgstr "信息 CLASSICLADDER-  收到的 Modbus I/O 模块: Lgt=%d -> "
 
 #: src/hal/classicladder/protocol_modbus_master.c:579
 #, c-format
@@ -2183,30 +2185,30 @@ msgstr "功能代码-%X ) "
 #: src/hal/classicladder/protocol_modbus_master.c:608
 #, c-format
 msgid "ERROR CLASSICLADDER-   MODBUS CRC error: calc=%x, frame=%x\n"
-msgstr ""
+msgstr "错误 CLASSICLADDER-   MODBUS CRC 错误: calc=%x, frame=%x\n"
 
 #: src/hal/classicladder/protocol_modbus_master.c:631
 #, c-format
 msgid ""
 "ERROR CLASSICLADDER-   MODBUS-INCORRECT RESPONSE RECEIVED FROM SLAVE!!!\n"
-msgstr ""
+msgstr "错误 CLASSICLADDER-   MODBUS-从从站收到不正确的回应!!!\n"
 
 #: src/hal/classicladder/protocol_modbus_master.c:637
 #, c-format
 msgid "ERROR CLASSICLADDER-   MODBUS-LOW LEVEL ERROR IN RESPONSE!!!\n"
-msgstr ""
+msgstr "错误 CLASSICLADDER-   MODBUS-响应中的低级错误!!!\n"
 
 #: src/hal/classicladder/protocol_modbus_master.c:697
 #, c-format
 msgid ""
 "ERROR CLASSICLADDER--- Variable not defined for MODBUS READ REQUEST mapping "
-msgstr ""
+msgstr "错误 CLASSICLADDER--- 未定义 MODBUS READ REQUEST 映射的变量 "
 
 #: src/hal/classicladder/protocol_modbus_master.c:744
 #, c-format
 msgid ""
 "ERROR CLASSICLADDER--- Variable not defined for MODBUS WRITE REQUEST mapping "
-msgstr ""
+msgstr "错误 CLASSICLADDER--- 未定义 MODBUS WRITE REQUEST 映射的变量 "
 
 #: src/hal/classicladder/serial_linux.c:139
 #, c-format
@@ -2266,18 +2268,18 @@ msgstr "刷新所有串行\n"
 #: src/hal/classicladder/socket_modbus_master.c:110
 #, c-format
 msgid "ERROR CLASSICLADDER-   Failed to create thread I/O modbus master...\n"
-msgstr ""
+msgstr "错误 CLASSICLADDER-   无法创建线程 I/O modbus主站...\n"
 
 #: src/hal/classicladder/socket_modbus_master.c:120
 #, c-format
 msgid ""
 "INFO CLASSICLADDER---I/O modbus master Data bits %i Stop bits %i Parity %i\n"
-msgstr ""
+msgstr "信息 CLASSICLADDER---I/O modbus 主站数据 位 %i 停止位 %i 奇偶校验 %i\n"
 
 #: src/hal/classicladder/socket_modbus_master.c:123
 #, c-format
 msgid "INFO CLASSICLADDER---I/O modbus master (%s) init ok !\n"
-msgstr ""
+msgstr "信息 CLASSICLADDER---I/O modbus 主站 (%s) 初始化成功 !\n"
 
 #: src/hal/classicladder/socket_modbus_master.c:123
 msgid "Serial"
@@ -2305,7 +2307,7 @@ msgstr "连接I/O模块...\n"
 #: src/hal/classicladder/socket_modbus_master.c:219
 #, c-format
 msgid "Not able to retrieve IP address in modbus table, huhh?!!!\n"
-msgstr ""
+msgstr "无法在modbus表中检索IP地址!!!\n"
 
 #: src/hal/classicladder/socket_modbus_master.c:224
 #, c-format
@@ -2315,102 +2317,102 @@ msgstr "无法连接到I/O模块\n"
 #: src/hal/classicladder/socket_modbus_master.c:230
 #, c-format
 msgid "Too much IP connections under run...\n"
-msgstr ""
+msgstr "运行中的IP连接过多...\n"
 
 #: src/hal/classicladder/socket_modbus_master.c:247
 #, c-format
 msgid "INFO CLASSICLADDER-   Sending frame to I/O module...\n"
-msgstr ""
+msgstr "信息 CLASSICLADDER-   向I/O模块发送帧...\n"
 
 #: src/hal/classicladder/socket_modbus_master.c:253
 #, c-format
 msgid "ERROR CLASSICLADDER-  FAILED TO SEND ON SOCKET !!!(LgtSend=%d)\n"
-msgstr ""
+msgstr "错误 CLASSICLADDER-  无法在SOCKET上发送 !!!(LgtSend=%d)\n"
 
 #: src/hal/classicladder/socket_modbus_master.c:274
 #, c-format
 msgid "INFO CLASSICLADDER-   waiting for slave response...\n"
-msgstr ""
+msgstr "信息 CLASSICLADDER-   等待从属响应...\n"
 
 #: src/hal/classicladder/socket_modbus_master.c:306
 #, c-format
 msgid "INFO CLASSICLADDER---I/O modbus master closed!\n"
-msgstr "梯形图信息---I/O modbus主站关闭!\n"
+msgstr "信息 CLASSICLADDER---I/O modbus主站关闭!\n"
 
 #: src/hal/classicladder/socket_modbus_master.c:355
 #, c-format
 msgid "INFO CLASSICLADDER- after transmit delay now...%i milliseconds\n"
-msgstr ""
+msgstr "信息 CLASSICLADDER- 现在发送延迟后...%i 毫秒\n"
 
 #: src/hal/classicladder/socket_modbus_master.c:365
 #, c-format
 msgid "ERROR CLASSICLADDER-  MODBUS NO RESPONSE (Errs=%d/%d) !?\n"
-msgstr ""
+msgstr "错误 CLASSICLADDER-  MODBUS 无响应 (Errs=%d/%d) !?\n"
 
 #: src/hal/classicladder/socket_server.c:86
 #, c-format
 msgid "INFO CLASSICLADDER--- INIT SOCKET!!!\n"
-msgstr "梯形图信息--- 初始化套字节!!!\n"
+msgstr "信息 CLASSICLADDER--- 初始化套字节!!!\n"
 
 #: src/hal/classicladder/socket_server.c:91
 #, c-format
 msgid "ERROR CLASSICLADDER--- Failed to open socket server...\n"
-msgstr ""
+msgstr "错误 CLASSICLADDER--- 无法打开套接字服务...\n"
 
 #: src/hal/classicladder/socket_server.c:103
 #, c-format
 msgid "ERROR CLASSICLADDER--- Failed to bind socket server...(error=%s)\n"
-msgstr ""
+msgstr "错误 CLASSICLADDER--- 无法绑定套接字服务...(error=%s)\n"
 
 #: src/hal/classicladder/socket_server.c:112
 #, c-format
 msgid "ERROR CLASSICLADDER--- Failed to listen socket server...(error=%s)\n"
-msgstr ""
+msgstr "错误 CLASSICLADDER--- 无法侦听套接字服务...(error=%s)\n"
 
 #: src/hal/classicladder/socket_server.c:130
 #, c-format
 msgid "ERROR CLASSICLADDER--- Failed to create thread socket server...\n"
-msgstr ""
+msgstr "错误 CLASSICLADDER--- 无法创建线程套接字服务...\n"
 
 #: src/hal/classicladder/socket_server.c:135
 #, c-format
 msgid "INFO CLASSICLADDER--- Server socket init ok (modbus - port %d)!\n"
-msgstr ""
+msgstr "信息 CLASSICLADDER--- 套接字服务初始化成功 (modbus - port %d)!\n"
 
 #: src/hal/classicladder/socket_server.c:174
 #, c-format
 msgid "INFO CLASSICLADDER--- MODBUS RESPONSE LGT=%d+%d !\n"
-msgstr "梯形图信息---Modbus响应LGT=%d+%d !\n"
+msgstr "信息 CLASSICLADDER---Modbus响应LGT=%d+%d !\n"
 
 #: src/hal/classicladder/socket_server.c:204
 #, c-format
 msgid "INFO MODBUS SERVER--- SOCKET WAITING...\n"
-msgstr ""
+msgstr "信息 MODBUS SERVER--- SOCKET 等待...\n"
 
 #: src/hal/classicladder/socket_server.c:209
 #, c-format
 msgid "INFO MODBUS SERVER--- SOCKET CLIENT ACCEPTED...\n"
-msgstr ""
+msgstr "信息 MODBUS SERVER--- SOCKET 客户端已被接受...\n"
 
 #: src/hal/classicladder/socket_server.c:215
 #, c-format
 msgid "INFO MODBUS SERVER--- SOCKET RECEIVED=%d !\n"
-msgstr ""
+msgstr "信息 MODBUS SERVER--- SOCKET 收到=%d !\n"
 
 #: src/hal/classicladder/socket_server.c:218
 #, c-format
 msgid "ERROR CLASSICLADDER--- Failed to recv socket server...(error=%s)\n"
-msgstr ""
+msgstr "错误 CLASSICLADDER--- 无法恢复套接字服务...(error=%s)\n"
 
 #: src/hal/classicladder/socket_server.c:232
 #, c-format
 msgid "INFO MODBUS SERVER--- CLOSE SOCK CLIENT.\n"
-msgstr ""
+msgstr "信息 MODBUS SERVER--- 关闭SOCK客户端。\n"
 
 #: src/hal/classicladder/socket_server.c:262
 #, c-format
 msgid "INFO CLASSICLADDER--- Server socket closed!\n"
-msgstr ""
+msgstr "信息 CLASSICLADDER--- 套接字服务已关闭!\n"
 
 #: src/hal/classicladder/spy_vars_gtk.c:180
 msgid "Bit Status Window"
@@ -3883,7 +3885,7 @@ msgstr ""
 
 #: tcl/tklinuxcnc.tcl:309
 msgid "Motion"
-msgstr "动作"
+msgstr "运动"
 
 #: tcl/tklinuxcnc.tcl:350
 msgid "About TkLinuxCNC"
@@ -4575,9 +4577,9 @@ msgstr "详细"
 msgid "Finalize Canceled"
 msgstr "已取消"
 
-#: tcl/ngcgui.tcl:2711 tcl/ngcgui.tcl:2867
+#: tcl/ngcgui.tcl:2711 tcl/ngcgui.tcl:2867 tcl/tooledit.tcl:885
 msgid "Dismiss"
-msgstr "解除"
+msgstr "确定"
 
 #: tcl/ngcgui.tcl:2716
 msgid "ngcgui Error"
@@ -5619,7 +5621,7 @@ msgstr "清除通知"
 
 #: src/emc/usr_intf/axis/scripts/axis.py:231
 msgid "Alt-F, M, V"
-msgstr ""
+msgstr "Alt+F, M, V"
 
 #: src/emc/usr_intf/axis/scripts/axis.py:231
 msgid "Open a Menu"
@@ -5680,7 +5682,7 @@ msgstr "连续"
 
 #: src/emc/usr_intf/axis/scripts/axis.py:1573
 msgid "T    Tool Table"
-msgstr "T    刀具表"
+msgstr "T   刀具表"
 
 #: src/emc/usr_intf/axis/scripts/axis.py:1583
 #: src/emc/usr_intf/axis/scripts/axis.py:1782
@@ -5799,6 +5801,8 @@ msgid ""
 "%(size)s bytes\n"
 "%(lines)s gcode lines"
 msgstr ""
+"%(size)s 字节\n"
+"%(lines)s 行G代码"
 
 #: src/emc/usr_intf/axis/scripts/axis.py:1800
 #, python-format
@@ -5813,7 +5817,7 @@ msgstr "%d 秒"
 #: src/emc/usr_intf/axis/scripts/axis.py:1810
 #, python-format
 msgid "%(a)f to %(b)f = %(diff)f %(units)s"
-msgstr ""
+msgstr "%(a)f 到 %(b)f = %(diff)f %(units)s"
 
 #: src/emc/usr_intf/axis/scripts/axis.py:1811
 msgid "G-Code Properties"
@@ -5940,7 +5944,7 @@ msgstr "插入刀具 %d，准备好后点击继续"
 
 #: src/emc/usr_intf/axis/scripts/hal_manualtoolchange.py:39
 msgid "Remove the tool and click continue when ready"
-msgstr "删除该刀具，准备好后单击继续"
+msgstr "移除该刀具，准备好后单击继续"
 
 #: src/emc/usr_intf/axis/scripts/hal_manualtoolchange.py:45
 #: src/emc/usr_intf/touchy/mdi.py:49 src/emc/usr_intf/gscreen/mdi.py:49
@@ -5965,11 +5969,11 @@ msgstr ""
 #: src/emc/usr_intf/axis/scripts/image-to-gcode.py:507
 #, python-format
 msgid "%s: Image to gcode"
-msgstr "%s: 图像到G代码"
+msgstr "%s: 图象到G代码"
 
 #: src/emc/usr_intf/axis/scripts/image-to-gcode.py:508
 msgid "Image to gcode"
-msgstr "图像到G代码"
+msgstr "图象到G代码"
 
 #: src/emc/usr_intf/axis/scripts/image-to-gcode.py:518
 #, python-format
@@ -6071,7 +6075,7 @@ msgstr "完全"
 
 #: src/emc/usr_intf/axis/scripts/image-to-gcode.py:654
 msgid "Invert Image"
-msgstr "反转图案"
+msgstr "反转图象"
 
 #: src/emc/usr_intf/axis/scripts/image-to-gcode.py:655
 msgid "Normalize Image"
@@ -7172,7 +7176,7 @@ msgstr "急停复位"
 #: src/emc/usr_intf/touchy/touchy.glade:459
 #: src/emc/usr_intf/gscreen/gscreen.glade:2442
 msgid "Estop"
-msgstr "急停按下"
+msgstr "急停"
 
 #: src/emc/usr_intf/touchy/touchy.glade:475
 #: src/emc/usr_intf/gscreen/gscreen.py:1792
@@ -7207,6 +7211,18 @@ msgstr "<b>回零</b>"
 #: src/emc/usr_intf/touchy/touchy.glade:644
 msgid "Startup"
 msgstr "启动"
+
+#: src/emc/usr_intf/touchy/touchy.glade:660
+msgid "Set Tool"
+msgstr "设置刀具"
+
+#: src/emc/usr_intf/touchy/touchy.glade:675
+msgid "Set Origin"
+msgstr "设置原点"
+
+#: src/emc/usr_intf/touchy/touchy.glade:690
+msgid "Macro"
+msgstr "宏"
 
 #: src/emc/usr_intf/touchy/touchy.glade:727
 msgid "G"
@@ -8455,6 +8471,8 @@ msgstr "Stepconf - 配置向导"
 #: src/emc/usr_intf/gscreen/gscreen.glade:1342
 #: src/emc/usr_intf/gscreen/gscreen.glade:1360
 #: src/emc/usr_intf/gscreen/gscreen.glade:1378
+#: lib/python/gladevcp/gladevcp-test.glade:80
+#: lib/python/gladevcp/gladevcp-test.glade:94
 msgid "label"
 msgstr "标签"
 
@@ -9218,6 +9236,30 @@ msgstr "保存此配置文件将丢弃PNCconf以外的配置更改。"
 msgid "Desktop Launcher for LinuxCNC config made by PNCconf"
 msgstr "由PNCconf制作的LinuxCNC配置桌面启动器"
 
+#: src/emc/usr_intf/pncconf/pncconf.py:1494
+msgid "**** PNCCONF ERROR:    custom firmware loading error"
+msgstr "**** PNCCONF 错误:    自定义固件加载错误"
+
+#: src/emc/usr_intf/pncconf/pncconf.py:1497
+msgid "**** PNCCONF INFO:    Found extra firmware in file"
+msgstr "**** PNCCONF 信息:    在文件中找到额外的固件"
+
+#: src/emc/usr_intf/pncconf/pncconf.py:1555
+msgid "Pncconf setup"
+msgstr "Pncconf 设置"
+
+#: src/emc/usr_intf/pncconf/pncconf.py:1567
+msgid "Pncconf is setting up"
+msgstr "Pncconf 正在打开"
+
+#: src/emc/usr_intf/pncconf/pncconf.py:1581
+msgid ""
+"\n"
+"**** Debug Pause! ****"
+msgstr ""
+"\n"
+"**** 调试暂停! ****"
+
 #: src/emc/usr_intf/pncconf/pncconf.py:1588
 msgid "Quit PNCconfig and discard changes?"
 msgstr "退出PNCconfig并放弃更改？"
@@ -9285,7 +9327,7 @@ msgid ""
 "change related options later -such as spindle feedback- the HAL connection "
 "will not update"
 msgstr ""
-"可以替换现有的glade面板？它将被重命名\n"
+"可以替换现有的glade面板?它将被重命名\n"
 "并添加到”备份“文件夹中，点击”现有的自定义程序“将避免此警告，\n"
 " 但是如果稍后更改相关选项，如主轴反馈，则HAL连接将不会更新"
 
@@ -9295,7 +9337,7 @@ msgid ""
 "Existing pyvcp-panel.xml will be renamed and added to 'backups' folder\n"
 "Clicking 'existing custom program' will aviod this warning. "
 msgstr ""
-"可以替换现有的自定义pyvcp面板？\n"
+"可以替换现有的自定义pyvcp面板?\n"
 "现有的pyvcp-panel.xml将被重命名并添加到”备份“文件夹中\n"
 "单击”现有的自定义程序“将会提示此警告。"
 
@@ -9338,69 +9380,69 @@ msgstr ""
 
 #: src/emc/usr_intf/pncconf/pncconf.py:4343
 msgid "Touchy require an external cycle start signal\n"
-msgstr "触摸需要外部循环启动信号\n"
+msgstr "Touchy需要一个外部循环启动信号\n"
 
 #: src/emc/usr_intf/pncconf/pncconf.py:4346
 msgid "Touchy require an external abort signal\n"
-msgstr "触摸需要一个外部中断信号\n"
+msgstr "Touchy需要一个外部中断信号\n"
 
 #: src/emc/usr_intf/pncconf/pncconf.py:4349
 msgid "Touchy require an external single-step signal\n"
-msgstr "触摸需要外部单步信号\n"
+msgstr "Touchy需要一个外部的单步信号\n"
 
 #: src/emc/usr_intf/pncconf/pncconf.py:4352
 msgid ""
 "Touchy require an external multi handwheel MPG encoder signal on the mesa "
 "page\n"
-msgstr "触摸需要在台面页面上使用外部多手轮MPG编码器信号\n"
+msgstr "Touchy在Mesa页面上需要一个外部多手轮MPG编码器信号\n"
 
 #: src/emc/usr_intf/pncconf/pncconf.py:4355
 msgid ""
 "Touchy require 'external mpg jogging' to be selected on the external control "
 "page\n"
-msgstr ""
+msgstr "Touchy需要在外部控制页面上选择“外部手轮点动”\n"
 
 #: src/emc/usr_intf/pncconf/pncconf.py:4358
 msgid ""
 "Touchy require the external mpg to be in 'shared mpg' mode on the external "
 "controls page\n"
-msgstr ""
+msgstr "Touchy要求外部控制页面上的外部手轮处于“共享手轮”模式\n"
 
 #: src/emc/usr_intf/pncconf/pncconf.py:4361
 msgid ""
 "Touchy require selectable increments to be unchecked on the external "
 "controls page\n"
-msgstr ""
+msgstr "Touchy需要可选的增量在外部控制页面上取消选中\n"
 
 #: src/emc/usr_intf/pncconf/pncconf.py:4374
 msgid ""
 "The 7i29 daughter board requires PWM type generators and a PWM base "
 "frequency of 20 khz\n"
-msgstr ""
+msgstr "7i29子板需要PWM型发生器，PWM基频为20 khz\n"
 
 #: src/emc/usr_intf/pncconf/pncconf.py:4377
 msgid ""
 "The 7i30 daughter board requires PWM type generators and a PWM base "
 "frequency of 20 khz\n"
-msgstr ""
+msgstr "7i30子板需要PWM型发生器，PWM基频为20 khz\n"
 
 #: src/emc/usr_intf/pncconf/pncconf.py:4380
 msgid ""
 "The 7i33 daughter board requires PDM type generators and a PDM base "
 "frequency of 6 Mhz\n"
-msgstr ""
+msgstr "7i33子板需要PDM型发生器，PDM基频为6 Mhz\n"
 
 #: src/emc/usr_intf/pncconf/pncconf.py:4383
 msgid ""
 "The 7i40 daughter board requires PWM type generators and a PWM base "
 "frequency of 50 khz\n"
-msgstr ""
+msgstr "7i40子板需要PWM型发生器，PWM基频为50 khz\n"
 
 #: src/emc/usr_intf/pncconf/pncconf.py:4386
 msgid ""
 "The 7i48 daughter board requires UDM type generators and a PWM base "
 "frequency of 24 khz\n"
-msgstr ""
+msgstr "7i48子板需要UDM型发生器，PWM基频为24 khz\n"
 
 #: src/emc/usr_intf/pncconf/pncconf.py:4531
 msgid "Gearbox Reduction Ratio"
@@ -9412,13 +9454,13 @@ msgstr "减速比"
 
 #: src/emc/usr_intf/pncconf/pncconf.py:4537
 msgid "Leadscrew Pitch"
-msgstr "丝杆螺距(_L):"
+msgstr "丝杆螺距"
 
 #: src/emc/usr_intf/pncconf/pncconf.py:4540
 #: src/emc/usr_intf/pncconf/dialogs.glade:587
 #: src/emc/usr_intf/pncconf/dialogs.glade:970
 msgid "Leadscrew TPI"
-msgstr "丝杆螺距(_L):"
+msgstr "丝杆TPI"
 
 #: src/emc/usr_intf/pncconf/pncconf.py:4544
 #: src/emc/usr_intf/pncconf/pncconf.py:4545
@@ -9454,29 +9496,29 @@ msgstr "编码器脉冲/"
 
 #: src/emc/usr_intf/pncconf/pncconf.py:4562
 msgid "Resolver Scale:"
-msgstr "解析度范围"
+msgstr "解析器比例:"
 
 #: src/emc/usr_intf/pncconf/pncconf.py:4893
 msgid "Spindle Scale Calculation"
-msgstr "主轴范围计算"
+msgstr "主轴比例计算"
 
 #: src/emc/usr_intf/pncconf/pncconf.py:5005
 msgid "Axis Scale Calculation"
-msgstr "轴范围计算"
+msgstr "轴比例计算"
 
 #: src/emc/usr_intf/pncconf/pages.py:222 src/emc/usr_intf/pncconf/pages.py:271
 #, python-format
 msgid "Point and click configuration - %s.pncconf "
-msgstr ""
+msgstr "点击配置 - %s.pncconf"
 
 #: src/emc/usr_intf/pncconf/pages.py:300
 msgid ""
 "You need to designate a parport and/or mesa I/O device before continuing."
-msgstr ""
+msgstr "在继续之前，您需要指定并口或mesa I/O设备。"
 
 #: src/emc/usr_intf/pncconf/pages.py:366
 msgid "PCI search page is unavailable\n"
-msgstr ""
+msgstr "PCI搜索页面不可用\n"
 
 #: src/emc/usr_intf/pncconf/pages.py:418
 msgid "in / min"
@@ -9495,12 +9537,17 @@ msgid ""
 " Choose the board type, firmware, component amounts and press 'Accept "
 "component changes' button'"
 msgstr ""
+"您需要配置mesa0页面。\n"
+" 选择电路板类型，固件，组件数量，然后"
+"按'接受组件更改'按钮"
 
 #: src/emc/usr_intf/pncconf/pages.py:838
 msgid ""
 "The chosen Mesa0 board is different from the current displayed.\n"
 "please press 'Accept component changes' button'"
 msgstr ""
+"所选的Mesa0板与当前显示的板不同。\n"
+"请按'接受组件更改'按钮"
 
 #: src/emc/usr_intf/pncconf/pages.py:877
 msgid ""
@@ -9508,20 +9555,25 @@ msgid ""
 " Choose the board type, firmware, component amounts and press 'Accept "
 "component changes' button'"
 msgstr ""
+"您需要配置mesa1页面。\n"
+" 选择电路板类型，固件，组件数量，然后"
+"按'接受组件更改'按钮"
 
 #: src/emc/usr_intf/pncconf/pages.py:880
 msgid ""
 "The chosen Mesa1 board is different from the current displayed.\n"
 "please press 'Accept component changes' button'"
 msgstr ""
+"所选的Mesa1板与当前显示的板不同。\n"
+"请按'接受组件更改'按钮"
 
 #: src/emc/usr_intf/pncconf/pages.py:1233
 msgid "You need to designate an E-stop input pin for this ladder program."
-msgstr ""
+msgstr "您需要为此梯形图程序指定一个急停输入引脚。"
 
 #: src/emc/usr_intf/pncconf/pages.py:1244
 msgid "You need to designate a probe input pin for this ladder program."
-msgstr ""
+msgstr "您需要为此梯形图程序指定一个探针输入引脚。"
 
 #: src/emc/usr_intf/pncconf/pages.py:1254
 msgid ""
@@ -9530,6 +9582,10 @@ msgid ""
 "Any existing file named -custom_backup.clp- will be lost.Selecting 'existing "
 "ladder program' will avoid this warning"
 msgstr ""
+"确定要替换现有的自定义梯形图程序吗?\n"
+"现有的Custom.clp将重命名为custom_backup.clp。\n"
+"任何名为-custom_backup.clp-的现有文件都将丢失。"
+"选择'现有梯形图程序'将避免此警告"
 
 #: src/emc/usr_intf/pncconf/build_INI.py:17
 #: src/emc/usr_intf/pncconf/build_HAL.py:53
@@ -9537,96 +9593,96 @@ msgstr ""
 #: src/emc/usr_intf/pncconf/build_HAL.py:952
 #, python-format
 msgid "# Generated by PNCconf at %s"
-msgstr ""
+msgstr "# 由PNCconf在%s生成"
 
 #: src/emc/usr_intf/pncconf/build_INI.py:19
 #: src/emc/usr_intf/pncconf/build_HAL.py:55
 msgid "# overwritten when you run PNCconf again"
-msgstr ""
+msgstr "# 再次运行PNCconf时会被覆盖"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:370
 msgid "# connect miscellaneous signals"
-msgstr ""
+msgstr "# 连接杂项信号"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:373
 msgid "#  ---HALUI signals---"
-msgstr ""
+msgstr "#  ---HALUI 信号---"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:392
 msgid "#  ---charge pump signals---"
-msgstr ""
+msgstr "# ---电荷泵信号---"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:396
 msgid "#  ---coolant signals---"
-msgstr ""
+msgstr "#  ---冷却水信号---"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:401
 msgid "#  ---probe signal---"
-msgstr ""
+msgstr "#  ---探针信号---"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:406
 msgid "# ---jog button signals---"
-msgstr ""
+msgstr "# ---点动按钮信号---"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:411
 msgid "# ---USB device jog button signals---"
-msgstr ""
+msgstr "# ---USB设备点动按钮信号---"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:452
 #: src/emc/usr_intf/pncconf/build_HAL.py:478
 msgid "#  ---mpg signals---"
-msgstr ""
+msgstr "#  ---mpg信号---"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:660
 msgid "#  ---motion control signals---"
-msgstr ""
+msgstr "#  ---运动控制信号---"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:665
 msgid "#  ---digital in / out signals---"
-msgstr ""
+msgstr "#  ---数字输入/输出信号---"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:675
 msgid "#  ---estop signals---"
-msgstr ""
+msgstr "#  ---急停信号---"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:694
 msgid "#  ---manual tool change signals---"
-msgstr ""
+msgstr "#  ---手动换刀信号---"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:703
 msgid "#  ---toolchange signals for custom tool changer---"
-msgstr ""
+msgstr "#  ---用于自定义换刀装置的换刀信号---"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:725
 msgid "#  --- Classicladder signals for Z axis Auto touch off program---"
-msgstr ""
+msgstr "#  --- Z轴自动触发程序的梯形图信号---"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:744
 msgid "# These files are loaded post gladeVCP, in the order they appear"
-msgstr ""
+msgstr "# 这些文件在GalDeVCP之后以它们出现的顺序加载。"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:758
 #: src/emc/usr_intf/pncconf/build_HAL.py:830
 msgid "# _DO NOT_ include your HAL commands here."
-msgstr ""
+msgstr "# _不要_ 在此处包含您的HAL命令。"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:759
 msgid "# Put custom HAL commands in custom_gvcp.hal"
-msgstr ""
+msgstr "# 把自定义HAL命令放在custom_gvcp.hal中"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:762
 msgid "# **** Setup of spindle speed display using gladevcp ****"
-msgstr ""
+msgstr "# **** 使用gladevcp设置主轴速度显示 ****"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:771
 msgid "# **** Setup GLADE MDI buttons ****"
-msgstr ""
+msgstr "# **** 设置GLADE MDI按钮 ****"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:784
 msgid ""
 "# **** Z axis touch-off button - requires the touch-off classicladder "
 "program ****"
-msgstr ""
+msgstr "# ****Z 轴触发按钮-需要触发的梯形图程序 ****"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:814
 msgid "# These files are loaded post GUI, in the order they appear"
@@ -9634,85 +9690,85 @@ msgstr ""
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:831
 msgid "# Put custom HAL commands in custom_postgui.hal"
-msgstr ""
+msgstr "# 把自定义HAL命令放在custom_postgui.hal中"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:832
 msgid "# The commands in this file are run after the GUI loads"
-msgstr ""
+msgstr "# GUI加载后运行此文件中的命令"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:842
 msgid "# **** Setup of spindle speed display using pyvcp -END ****"
-msgstr ""
+msgstr "# **** 使用pyvcp设置主轴速度显示-END ****"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:854
 msgid "# This file will not be overwritten when you run PNCconf again"
-msgstr ""
+msgstr "# 再次运行PNCconf时，不会覆盖此文件"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:860
 msgid "# These commands are required for Touchy GUI"
-msgstr ""
+msgstr "# Touchy GUI需要这些命令"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:960
 #, python-format
 msgid "Generated by PNCconf at %s"
-msgstr ""
+msgstr "由%s的PNCconf生成"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:972
 msgid "configures LinuxCNC as:\n"
-msgstr ""
+msgstr "将LinuxCNC配置为:\n"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:973
 msgid "type CNC\n"
-msgstr ""
+msgstr "CNC型号\n"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:974
 msgid "will be used as the frontend display"
-msgstr ""
+msgstr "将用作前端显示"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:983
 msgid " connector"
-msgstr ""
+msgstr "连接器"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:995
 msgid "invrt"
-msgstr ""
+msgstr "反向"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:1004
 #, python-format
 msgid "%(name)s Parport"
-msgstr ""
+msgstr "%(name)s的端口"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:1009
 #: src/emc/usr_intf/pncconf/build_HAL.py:1017
 msgid "-> inverted"
-msgstr ""
+msgstr "->反向"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:1011
 #, python-format
 msgid "pin# %(pinnum)d is connected to input signal:'%(data)s' %(mesag)s"
-msgstr ""
+msgstr "引脚# %(pinnum)d 连接到输入信号:'%(data)s' %(mesag)s"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:1019
 #, python-format
 msgid "pin# %(pinnum)d is connected to output signal:'%(data)s' %(mesag)s"
-msgstr ""
+msgstr "引脚# %(pinnum)d 连接到输出信号:'%(data)s' %(mesag)s"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:1423
 msgid "#  Use ACTUAL spindle velocity from spindle encoder"
-msgstr ""
+msgstr "# 使用主轴编码器的ACTUAL主轴速度"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:1424
 msgid "#  spindle-velocity bounces around so we filter it with lowpass"
-msgstr ""
+msgstr "# spindle-velocity会反弹，所以我们用低通滤波"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:1425
 msgid ""
 "#  spindle-velocity is signed so we use absolute component to remove sign"
-msgstr ""
+msgstr "#  strin-velocity已签名，因此我们使用绝对组件删除符号"
 
 #: src/emc/usr_intf/pncconf/build_HAL.py:1426
 msgid "#  ACTUAL velocity is in RPS not RPM so we scale it."
-msgstr ""
+msgstr "# ACTUAL速度是RPS而不是RPM，所以我们缩放它。"
 
 #: src/emc/usr_intf/pncconf/private_data.py:37
 msgid "PNCconf"
@@ -9724,63 +9780,63 @@ msgstr ""
 
 #: src/emc/usr_intf/pncconf/private_data.py:41
 msgid "External Controls"
-msgstr ""
+msgstr "外部控制"
 
 #: src/emc/usr_intf/pncconf/private_data.py:42
 msgid "Mesa Card 0"
-msgstr ""
+msgstr "Mesa 卡 0"
 
 #: src/emc/usr_intf/pncconf/private_data.py:43
 msgid "Mesa Card 1"
-msgstr ""
+msgstr "Mesa 卡 1"
 
 #: src/emc/usr_intf/pncconf/private_data.py:44
 msgid "Parallel Port"
-msgstr ""
+msgstr "并口"
 
 #: src/emc/usr_intf/pncconf/private_data.py:46
 msgid "X Motor"
-msgstr ""
+msgstr "X 电机"
 
 #: src/emc/usr_intf/pncconf/private_data.py:47
 #: src/emc/usr_intf/pncconf/private_data.py:333
 msgid "X Axis"
-msgstr ""
+msgstr "X 轴"
 
 #: src/emc/usr_intf/pncconf/private_data.py:48
 msgid "Y Motor"
-msgstr ""
+msgstr "Y 电机"
 
 #: src/emc/usr_intf/pncconf/private_data.py:49
 #: src/emc/usr_intf/pncconf/private_data.py:333
 msgid "Y Axis"
-msgstr ""
+msgstr "Y 轴"
 
 #: src/emc/usr_intf/pncconf/private_data.py:50
 msgid "Z Motor"
-msgstr ""
+msgstr "Z 电机"
 
 #: src/emc/usr_intf/pncconf/private_data.py:51
 #: src/emc/usr_intf/pncconf/private_data.py:333
 msgid "Z Axis"
-msgstr ""
+msgstr "Z 轴"
 
 #: src/emc/usr_intf/pncconf/private_data.py:52
 msgid "A Motor"
-msgstr ""
+msgstr "A 电机"
 
 #: src/emc/usr_intf/pncconf/private_data.py:53
 #: src/emc/usr_intf/pncconf/private_data.py:334
 msgid "A Axis"
-msgstr ""
+msgstr "A 轴"
 
 #: src/emc/usr_intf/pncconf/private_data.py:54
 msgid "Spindle Motor"
-msgstr ""
+msgstr "主轴电机"
 
 #: src/emc/usr_intf/pncconf/private_data.py:56
 msgid "Realtime"
-msgstr ""
+msgstr "实时"
 
 #: src/emc/usr_intf/pncconf/private_data.py:103
 msgid "Not Used"
@@ -9818,7 +9874,7 @@ msgstr "GPIO输出"
 
 #: src/emc/usr_intf/pncconf/private_data.py:106
 msgid "GPIO O Drain"
-msgstr "GPIO输入"
+msgstr "GPIO O 开漏"
 
 #: src/emc/usr_intf/pncconf/private_data.py:109
 msgid "Quad Enc-A"
@@ -9838,11 +9894,11 @@ msgstr "Quad编编码器-M"
 
 #: src/emc/usr_intf/pncconf/private_data.py:112
 msgid "Muxed Enc 0"
-msgstr "Quad编编码器-0"
+msgstr ""
 
 #: src/emc/usr_intf/pncconf/private_data.py:112
 msgid "Muxed Enc 1"
-msgstr "Quad编编码器-1"
+msgstr ""
 
 #: src/emc/usr_intf/pncconf/private_data.py:112
 msgid "muxed Enc I"
@@ -10086,7 +10142,7 @@ msgstr ""
 
 #: src/emc/usr_intf/pncconf/private_data.py:142
 msgid "7i77 Analog-SS1"
-msgstr ""
+msgstr "7i77 模拟-SS1"
 
 #: src/emc/usr_intf/pncconf/private_data.py:142
 msgid "7i77 I/O-SS3"
@@ -10094,31 +10150,31 @@ msgstr ""
 
 #: src/emc/usr_intf/pncconf/private_data.py:142
 msgid "7i77 Analog-SS4"
-msgstr ""
+msgstr "7i77 模拟-SS4"
 
 #: src/emc/usr_intf/pncconf/private_data.py:144
 msgid "Analog Input"
-msgstr ""
+msgstr "模拟输入"
 
 #: src/emc/usr_intf/pncconf/private_data.py:150
 msgid "Unused Unused"
-msgstr ""
+msgstr "未使用"
 
 #: src/emc/usr_intf/pncconf/private_data.py:173
 msgid "Machine Is Enabled"
-msgstr ""
+msgstr "机器已启用"
 
 #: src/emc/usr_intf/pncconf/private_data.py:173
 msgid "X Amplifier Enable"
-msgstr ""
+msgstr "X放大器使能"
 
 #: src/emc/usr_intf/pncconf/private_data.py:173
 msgid "Y Amplifier Enable"
-msgstr ""
+msgstr "Y放大器使能"
 
 #: src/emc/usr_intf/pncconf/private_data.py:173
 msgid "Z Amplifier Enable"
-msgstr ""
+msgstr "Z放大器使能"
 
 #: src/emc/usr_intf/pncconf/private_data.py:174
 msgid "A Amplifier Enable"
@@ -10929,7 +10985,7 @@ msgstr "7i76 Mode 0 I/O 卡"
 
 #: src/emc/usr_intf/pncconf/private_data.py:398
 msgid "7i76 Mode 2 I/O Card"
-msgstr ""
+msgstr "7i76 Mode 2 I/O 卡"
 
 #: src/emc/usr_intf/pncconf/private_data.py:399
 msgid "7i77 Mode 0 I/O Card"
@@ -10937,7 +10993,7 @@ msgstr "7i77 Mode 0 I/O 卡"
 
 #: src/emc/usr_intf/pncconf/private_data.py:399
 msgid "7i77 Mode 3 I/O Card"
-msgstr ""
+msgstr "7i77 Mode 3 I/O 卡"
 
 #: src/emc/usr_intf/pncconf/private_data.py:399
 msgid "7i73 Mode 1 Pendant Card"
@@ -10945,31 +11001,35 @@ msgstr "7i73 Mode 1 Pendant 卡"
 
 #: src/emc/usr_intf/pncconf/private_data.py:399
 msgid "7i84 Mode 1 I/O Card"
-msgstr ""
+msgstr "7i84 Mode 1 I/O 卡"
 
 #: src/emc/usr_intf/pncconf/private_data.py:399
 msgid "7i84 Mode 3 I/O Card"
-msgstr ""
+msgstr "7i84 Mode 3 I/O 卡"
 
 #: src/emc/usr_intf/pncconf/private_data.py:402
 msgid "Unused Analog In"
-msgstr ""
+msgstr "未使用模拟输入"
 
 #: src/emc/usr_intf/pncconf/private_data.py:611
 msgid ""
 "7i64-Input\n"
 "P3 and P4"
 msgstr ""
+"7i64-输入\n"
+"P3 和 P4"
 
 #: src/emc/usr_intf/pncconf/private_data.py:611
 msgid ""
 "7i64-Output\n"
 "P2 and P5"
 msgstr ""
+"7i64-输出\n"
+"P2 和 P5"
 
 #: src/emc/usr_intf/pncconf/private_data.py:611
 msgid "7i64-Analog In"
-msgstr ""
+msgstr "7i64-模拟输入"
 
 #: src/emc/usr_intf/pncconf/private_data.py:624
 msgid ""
@@ -10988,24 +11048,32 @@ msgid ""
 "7i70-Input\n"
 "TB3"
 msgstr ""
+"7i70-输入\n"
+"TB3"
 
 #: src/emc/usr_intf/pncconf/private_data.py:636
 msgid ""
 "7i70-Input\n"
 "TB2"
 msgstr ""
+"7i70-输入\n"
+"TB2"
 
 #: src/emc/usr_intf/pncconf/private_data.py:648
 msgid ""
 "7i71-Output\n"
 "TB3"
 msgstr ""
+"7i71-输出\n"
+"TB3"
 
 #: src/emc/usr_intf/pncconf/private_data.py:648
 msgid ""
 "7i71-Output\n"
 "TB2"
 msgstr ""
+"7i71-输出\n"
+"TB2"
 
 #: src/emc/usr_intf/pncconf/private_data.py:660
 #: src/emc/usr_intf/pncconf/private_data.py:672
@@ -11027,6 +11095,8 @@ msgid ""
 "7i76-Analog Output\n"
 "TB4"
 msgstr ""
+"7i76-模拟输出\n"
+"TB4"
 
 #: src/emc/usr_intf/pncconf/private_data.py:684
 #: src/emc/usr_intf/pncconf/private_data.py:696
@@ -11048,6 +11118,8 @@ msgid ""
 "7i77-Analog Output\n"
 "TB5"
 msgstr ""
+"7i77-模拟输出\n"
+"TB5"
 
 #: src/emc/usr_intf/pncconf/private_data.py:708
 msgid "7i73-I/O\n"
@@ -11074,41 +11146,41 @@ msgstr ""
 
 #: src/emc/usr_intf/pncconf/private_data.py:782
 msgid "Quit PNCconf and discard changes?"
-msgstr ""
+msgstr "退出PNCconf并放弃更改?"
 
 #: src/emc/usr_intf/pncconf/tests.py:159
 msgid ""
 "You specified there is an existing gladefile, But there is not one in the "
 "machine-named folder.."
-msgstr ""
+msgstr "您指定有一个现有的gladile，但是在机器命名文件夹中没有gladile。"
 
 #: src/emc/usr_intf/pncconf/tests.py:487
 msgid "Servo tuning is not tested in PNCconf yet\n"
-msgstr ""
+msgstr "伺服调谐在PNCconf尚未测试\n"
 
 #: src/emc/usr_intf/pncconf/tests.py:496
 msgid "degrees"
-msgstr ""
+msgstr "度"
 
 #: src/emc/usr_intf/pncconf/tests.py:497
 msgid "degrees / minute"
-msgstr ""
+msgstr "度/分钟"
 
 #: src/emc/usr_intf/pncconf/tests.py:498
 msgid "degrees / second²"
-msgstr ""
+msgstr "度/秒²"
 
 #: src/emc/usr_intf/pncconf/tests.py:501
 msgid "revolutions"
-msgstr ""
+msgstr "旋转"
 
 #: src/emc/usr_intf/pncconf/tests.py:502
 msgid "rpm"
-msgstr ""
+msgstr "转数"
 
 #: src/emc/usr_intf/pncconf/tests.py:503
 msgid "revs / second²"
-msgstr ""
+msgstr "转/秒²"
 
 #: src/emc/usr_intf/pncconf/tests.py:507
 #: src/emc/usr_intf/pncconf/x_axis.glade:46
@@ -11147,13 +11219,13 @@ msgstr "%s 轴微调"
 msgid ""
 " You must designate a ENCODER / RESOLVER signal and an ANALOG SPINDLE signal "
 "for this axis test"
-msgstr ""
+msgstr "您必须为此轴测试指定ENCODER / RESOLVER信号和ANALOG SPINDLE信号"
 
 #: src/emc/usr_intf/pncconf/tests.py:907
 msgid ""
 " You must designate a ENCODER / RESOLVER signal and a PWM signal for this "
 "axis test"
-msgstr ""
+msgstr "您必须为此轴测试指定ENCODER / RESOLVER信号和PWM信号"
 
 #: src/emc/usr_intf/pncconf/tests.py:1196
 msgid ""
@@ -11163,10 +11235,14 @@ msgid ""
 "hesitate to even allow it's use but at times it's very useful.\n"
 "Do you wish to continue the test?"
 msgstr ""
+"由于技术原因，这个测试面板只能加载一次，而不需要重新加载pncconf。 "
+"除非您重新加载pncconf，并且很可能需要打开终端并键入“halrun-U”，否则您 "
+"将无法进行任何其他测试。我甚至不愿允许使用它，但有时它非常有用。\n"
+"你想继续测试吗?"
 
 #: src/emc/usr_intf/pncconf/main_page.glade:6
 msgid "PNCconf - Mesa Card Configuration Wizard"
-msgstr "PNCconf  -  Mesa卡配置向导"
+msgstr "PNCconf - Mesa卡配置向导"
 
 #: src/emc/usr_intf/pncconf/main_page.glade:190
 msgid ""
@@ -11338,7 +11414,7 @@ msgstr "Mesa端口地址:"
 #: src/emc/usr_intf/pncconf/mesa0.glade:93
 #: src/emc/usr_intf/pncconf/mesa1.glade:93
 msgid "Firmware:"
-msgstr "固件"
+msgstr "固件:"
 
 #: src/emc/usr_intf/pncconf/mesa0.glade:147
 #: src/emc/usr_intf/pncconf/mesa1.glade:147
@@ -11400,27 +11476,27 @@ msgstr "智能串口数量:"
 #: src/emc/usr_intf/pncconf/mesa0.glade:436
 #: src/emc/usr_intf/pncconf/mesa1.glade:436
 msgid "7i29 daughter board"
-msgstr ""
+msgstr "7i29子板"
 
 #: src/emc/usr_intf/pncconf/mesa0.glade:447
 #: src/emc/usr_intf/pncconf/mesa1.glade:447
 msgid "7i30 daughter board"
-msgstr ""
+msgstr "7i30子板"
 
 #: src/emc/usr_intf/pncconf/mesa0.glade:458
 #: src/emc/usr_intf/pncconf/mesa1.glade:458
 msgid "7i33 daughter board"
-msgstr ""
+msgstr "7i33子板"
 
 #: src/emc/usr_intf/pncconf/mesa0.glade:469
 #: src/emc/usr_intf/pncconf/mesa1.glade:469
 msgid "7i40 daughter board"
-msgstr ""
+msgstr "7i40 子板"
 
 #: src/emc/usr_intf/pncconf/mesa0.glade:480
 #: src/emc/usr_intf/pncconf/mesa1.glade:480
 msgid "7i48 daughter board"
-msgstr ""
+msgstr "7i48子板"
 
 #: src/emc/usr_intf/pncconf/mesa0.glade:496
 #: src/emc/usr_intf/pncconf/mesa1.glade:496
@@ -12577,11 +12653,11 @@ msgstr "智能串口 5"
 
 #: src/emc/usr_intf/pncconf/start.glade:25
 msgid "Create a desktop launcher to start LinuxCNC with this configuration."
-msgstr "创建桌面启动器以启动LinuxCNC与此配置。"
+msgstr "创建桌面快捷方式以使用此配置启动LinuxCNC。"
 
 #: src/emc/usr_intf/pncconf/start.glade:42
 msgid "Create a desktop shortcut (symlink) to configuration files."
-msgstr "创建配置文件的桌面快捷方式(符号链接)。"
+msgstr "为配置文件创建桌面快捷方式(符号链接)。"
 
 #: src/emc/usr_intf/pncconf/start.glade:107
 msgid "Create a new configuration"
@@ -12589,7 +12665,7 @@ msgstr "创建新的配置"
 
 #: src/emc/usr_intf/pncconf/start.glade:125
 msgid "Show Advanced Option Pages"
-msgstr "显示高级选项页"
+msgstr "显示高级选项"
 
 #: src/emc/usr_intf/pncconf/external.glade:25
 msgid "<b>Serial VFD</b>"
@@ -12597,15 +12673,15 @@ msgstr "串行VFD"
 
 #: src/emc/usr_intf/pncconf/external.glade:65
 msgid "<b>External Button Jogging</b>"
-msgstr "外部按钮慢跑"
+msgstr "外部按钮点动"
 
 #: src/emc/usr_intf/pncconf/external.glade:87
 msgid "<b>External MPG Jogging</b>"
-msgstr "外部MPG慢跑"
+msgstr "外部MPG点动"
 
 #: src/emc/usr_intf/pncconf/external.glade:109
 msgid "<b>External Feed Override</b>"
-msgstr "<b>外部尽给倍率</b>"
+msgstr "<b>外部进给倍率</b>"
 
 #: src/emc/usr_intf/pncconf/external.glade:131
 msgid "<b>Max Velocity Override</b>"
@@ -13187,23 +13263,23 @@ msgstr "GTK主题"
 #: src/emc/usr_intf/pncconf/screen.glade:1095
 #: src/emc/usr_intf/gscreen/gscreen.glade:1857
 msgid "Absolute Text Color"
-msgstr "绝对文字颜色"
+msgstr "绝对颜色"
 
 #: src/emc/usr_intf/pncconf/screen.glade:1153
 msgid "Absolute Textcolor"
-msgstr "绝对文字颜色"
+msgstr "绝对颜色"
 
 #: src/emc/usr_intf/pncconf/screen.glade:1166
 msgid "Relative Textcolor"
-msgstr "相对文字颜色"
+msgstr "相对颜色"
 
 #: src/emc/usr_intf/pncconf/screen.glade:1179
 msgid "DTG Textcolor"
-msgstr "DTG 文字颜色"
+msgstr "DTG颜色"
 
 #: src/emc/usr_intf/pncconf/screen.glade:1192
 msgid "Error Textcolor"
-msgstr "错误文字颜色"
+msgstr "错误颜色"
 
 #: src/emc/usr_intf/pncconf/screen.glade:1313
 msgid "GUI Options"
@@ -13334,28 +13410,28 @@ msgstr "<b>默认值和选项</b>"
 #: src/emc/usr_intf/pncconf/z_axis.glade:33
 #: src/emc/usr_intf/pncconf/a_axis.glade:33
 msgid "Use Encoder Index For Home:"
-msgstr "使用编码器索引回原点:"
+msgstr "使用编码器索引回零:"
 
 #: src/emc/usr_intf/pncconf/x_axis.glade:75
 #: src/emc/usr_intf/pncconf/y_axis.glade:75
 #: src/emc/usr_intf/pncconf/z_axis.glade:75
 #: src/emc/usr_intf/pncconf/a_axis.glade:75
 msgid "Home Final Velocity:"
-msgstr "原点最终速度:"
+msgstr "回零最终速度:"
 
 #: src/emc/usr_intf/pncconf/x_axis.glade:106
 #: src/emc/usr_intf/pncconf/y_axis.glade:106
 #: src/emc/usr_intf/pncconf/z_axis.glade:106
 #: src/emc/usr_intf/pncconf/a_axis.glade:106
 msgid "Home Latch Direction:"
-msgstr "原点锁定方式:"
+msgstr "原点锁定方向:"
 
 #: src/emc/usr_intf/pncconf/x_axis.glade:140
 #: src/emc/usr_intf/pncconf/y_axis.glade:140
 #: src/emc/usr_intf/pncconf/z_axis.glade:140
 #: src/emc/usr_intf/pncconf/a_axis.glade:140
 msgid "Home Search Direction:"
-msgstr "原点搜索方式:"
+msgstr "原点搜索方向:"
 
 #: src/emc/usr_intf/pncconf/x_axis.glade:183
 #: src/emc/usr_intf/pncconf/y_axis.glade:183
@@ -13369,7 +13445,7 @@ msgstr "原点锁定速度:"
 #: src/emc/usr_intf/pncconf/z_axis.glade:209
 #: src/emc/usr_intf/pncconf/a_axis.glade:209
 msgid "filename:"
-msgstr "文件名:"
+msgstr "文件名称:"
 
 #: src/emc/usr_intf/pncconf/x_axis.glade:271
 #: src/emc/usr_intf/pncconf/y_axis.glade:271
@@ -13522,7 +13598,7 @@ msgstr "3pwm死区时间:"
 #: src/emc/usr_intf/pncconf/z_motor.glade:368
 #: src/emc/usr_intf/pncconf/a_motor.glade:368
 msgid "Quad Pulses / Rev:"
-msgstr "四脉冲/转:"
+msgstr "Quad 脉冲/转:"
 
 #: src/emc/usr_intf/pncconf/x_motor.glade:449
 #: src/emc/usr_intf/pncconf/y_motor.glade:449
@@ -13737,14 +13813,14 @@ msgstr "8i20最大电流"
 #: src/emc/usr_intf/pncconf/a_motor.glade:1115
 #: src/emc/usr_intf/pncconf/s_motor.glade:1303
 msgid "<b>Output Options</b>"
-msgstr "输出文件"
+msgstr "<b>输出选项</b>"
 
 #: src/emc/usr_intf/pncconf/x_motor.glade:1167
 #: src/emc/usr_intf/pncconf/y_motor.glade:1167
 #: src/emc/usr_intf/pncconf/z_motor.glade:1167
 #: src/emc/usr_intf/pncconf/a_motor.glade:1167
 msgid "alignment current"
-msgstr "对准电流"
+msgstr "校准电流"
 
 #: src/emc/usr_intf/pncconf/x_motor.glade:1177
 #: src/emc/usr_intf/pncconf/y_motor.glade:1177
@@ -13800,7 +13876,7 @@ msgstr "编码器偏移"
 #: src/emc/usr_intf/pncconf/a_motor.glade:1327
 #: src/emc/usr_intf/pncconf/s_motor.glade:1531
 msgid "Poles"
-msgstr ""
+msgstr "电极"
 
 #: src/emc/usr_intf/pncconf/x_motor.glade:1347
 #: src/emc/usr_intf/pncconf/y_motor.glade:1347
@@ -13984,7 +14060,7 @@ msgstr "输出电压信息"
 
 #: src/emc/usr_intf/pncconf/s_motor.glade:985
 msgid "Slave number:"
-msgstr "奴隶编号:"
+msgstr "从属编号:"
 
 #: src/emc/usr_intf/pncconf/s_motor.glade:1005
 msgid "Serial Spindle VFD Info"
@@ -13996,7 +14072,7 @@ msgstr "绝对反馈"
 
 #: src/emc/usr_intf/pncconf/s_motor.glade:1359
 msgid "slignment current"
-msgstr "对准电流"
+msgstr "校准电流"
 
 #: src/emc/usr_intf/pncconf/s_motor.glade:1662
 msgid "Use At-Speed Calculation"
@@ -14004,15 +14080,15 @@ msgstr "使用速度计算"
 
 #: src/emc/usr_intf/pncconf/s_motor.glade:1910
 msgid "Spindle Display Filter:"
-msgstr "主轴显示过滤器"
+msgstr "主轴显示滤波器:"
 
 #: src/emc/usr_intf/pncconf/s_motor.glade:1976
 msgid "Use Near Range"
-msgstr "使用近距离"
+msgstr "使用近似范围"
 
 #: src/emc/usr_intf/pncconf/s_motor.glade:1991
 msgid "Use Near Scale"
-msgstr "使用近刻度"
+msgstr "使用近似比例"
 
 #: src/emc/usr_intf/pncconf/options.glade:52
 msgid "Cmd 15"
@@ -14108,7 +14184,7 @@ msgstr "在此页面添加HAL组件。"
 
 #: src/emc/usr_intf/pncconf/realtime.glade:40
 msgid "<b>Component</b>"
-msgstr "<b>部件</b>"
+msgstr "<b>组件</b>"
 
 #: src/emc/usr_intf/pncconf/realtime.glade:64
 msgid "<b>number of components</b>"
@@ -14162,6 +14238,10 @@ msgid ""
 "  Address \n"
 "  Search"
 msgstr ""
+"附加 PCI\n"
+"  端口\n"
+"  地址 \n"
+"  搜索"
 
 #: src/emc/usr_intf/pncconf/pport1.glade:1401
 #: src/emc/usr_intf/pncconf/pport2.glade:1449
@@ -14180,11 +14260,11 @@ msgstr ""
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:208
 msgid "Slow Dac Speed"
-msgstr "选择手动速度"
+msgstr "Dac 低速"
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:223
 msgid "Fast Dac Speed"
-msgstr "选择手动速度"
+msgstr "Dac 高速"
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:336
 msgid "Dac Offset:"
@@ -14204,7 +14284,7 @@ msgstr "启用放大器"
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:405
 msgid "Invert Encoder"
-msgstr "反转图案"
+msgstr "反转编码器"
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:422
 msgid "Invert Motor"
@@ -14300,8 +14380,6 @@ msgstr "秒"
 #: src/emc/usr_intf/pncconf/dialogs.glade:1591
 msgid "Khz"
 msgstr ""
-"-----取样\n"
-"在 ---- KHz"
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:1607
 msgid "Calculated Axis SCALE:"
@@ -14318,15 +14396,15 @@ msgstr ""
 #: src/emc/usr_intf/pncconf/dialogs.glade:1749
 #: src/emc/usr_intf/pncconf/dialogs.glade:2525
 msgid "<b>Motion Data</b>"
-msgstr "运转时间"
+msgstr "<b>运动数据</b>"
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:2034
 msgid "Pulley teeth (motor:gearbox):"
-msgstr "滑轮(电机:变速箱):"
+msgstr "齿轮比(电机:变速箱):"
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:2044
 msgid "Gear ratio 1 (Input:Output)"
-msgstr ""
+msgstr "齿轮比 1 (输入:输出)"
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:2109
 msgid "10"
@@ -14334,7 +14412,7 @@ msgstr ""
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:2153
 msgid "      Voltage for Max RPM:"
-msgstr "最大转速的电压:"
+msgstr "      最大转速电压:"
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:2162
 msgid "Use Negative voltage for reverse:"
@@ -14342,11 +14420,11 @@ msgstr "使用负电压反向:"
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:2176
 msgid "Gear ratio 2 (Input:Output)"
-msgstr ""
+msgstr "齿轮比 2 (输入:输出)"
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:2256
 msgid "      <b>MOTOR</b> RPM at Max Voltage"
-msgstr ""
+msgstr "      <b>MOTOR</b> 最大转速电压"
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:2324
 msgid "<b>Spindle Drive Motor</b>"
@@ -14354,11 +14432,11 @@ msgstr "<b>主轴驱动电机<b>"
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:2419
 msgid "Spindle RPM at Max Motor Speed -gear 1:"
-msgstr ""
+msgstr "最大电机转速时的主轴转速 - 转速1"
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:2426
 msgid "Spindle RPM at Max Motor Speed -gear 2:"
-msgstr ""
+msgstr "最大电机转速时的主轴转速 - 转速2"
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:2437
 msgid "500"
@@ -14387,7 +14465,7 @@ msgstr "毫米/分钟"
 #: src/emc/usr_intf/pncconf/dialogs.glade:3234
 #: src/emc/usr_intf/pncconf/dialogs.glade:3693
 msgid "Current"
-msgstr "货币"
+msgstr "当前"
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:3245
 msgid "P:"
@@ -14408,31 +14486,31 @@ msgstr "原始"
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:3541
 msgid "DeadBand"
-msgstr ""
+msgstr "死区"
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:3644
 msgid "PID Tuning"
-msgstr "<b>方向</b>"
+msgstr "PID调整"
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:3660
 msgid "Step Time:"
-msgstr "单步次数:"
+msgstr "脉冲频率:"
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:3671
 msgid "Step Space:"
-msgstr "单步大小:"
+msgstr "脉冲宽度:"
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:3682
 msgid "Direction Hold:"
-msgstr "方向:"
+msgstr "方向保持:"
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:3719
 msgid "Direction Setup:"
-msgstr "方向:"
+msgstr "方向设置:"
 
 #: src/emc/usr_intf/pncconf/dialogs.glade:3929
 msgid "Step Timing"
-msgstr "停止"
+msgstr "脉冲频率"
 
 #: src/emc/usr_intf/gscreen/gscreen.py:228
 msgid "Manual Mode"
@@ -14611,7 +14689,7 @@ msgstr ""
 
 #: src/emc/usr_intf/gscreen/gscreen.py:1143
 msgid "Control powered up and initialized"
-msgstr "控制启动并初始化"
+msgstr "控制器启动并初始化"
 
 #: src/emc/usr_intf/gscreen/gscreen.py:1338
 msgid "Cycle start pressed in AUTO mode"
@@ -14802,7 +14880,7 @@ msgstr "手动换刀"
 
 #: src/emc/usr_intf/gscreen/gscreen.py:2786
 msgid "Operator Message"
-msgstr "操作者信息"
+msgstr "操作员信息"
 
 #: src/emc/usr_intf/gscreen/gscreen.py:2820
 #: src/emc/usr_intf/gscreen/gscreen.py:2824
@@ -14849,15 +14927,15 @@ msgstr "不能取消多轴"
 
 #: src/emc/usr_intf/gscreen/gscreen.py:3287
 msgid "No axis selected to unhome"
-msgstr "未选择要消零的轴"
+msgstr "没有选择要消零的轴"
 
 #: src/emc/usr_intf/gscreen/gscreen.py:3296
 msgid "No axis selected for origin zeroing"
-msgstr "未选择轴进行原点回零"
+msgstr "没有选择原点归零的轴"
 
 #: src/emc/usr_intf/gscreen/gscreen.py:3307
 msgid "No axis selected for origin touch-off"
-msgstr "未选择轴进行原点对刀"
+msgstr "没有选择原点对刀的轴"
 
 #: src/emc/usr_intf/gscreen/gscreen.py:3313
 msgid "Can't tool touch-off multiple axes"
@@ -15018,7 +15096,7 @@ msgid ""
 "  Text:"
 msgstr ""
 "搜索\n"
-"  文本:"
+"内容:"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:1766
 msgid "<b>Mode</b>"
@@ -15034,11 +15112,11 @@ msgstr "主题"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:1847
 msgid "Relative Text Color"
-msgstr "相对文本颜色"
+msgstr "相对颜色"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:1895
 msgid "DTG Text Color"
-msgstr "DTG 文本颜色"
+msgstr "DTG颜色"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:1916
 msgid "Warning Audio"
@@ -15058,7 +15136,7 @@ msgstr "启动转速"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:2015
 msgid "Metric\n"
-msgstr "测量\n"
+msgstr "单位\n"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:2030
 msgid ""
@@ -15074,7 +15152,7 @@ msgid ""
 "   Mode"
 msgstr ""
 "直径\n"
-"   模式"
+"模式"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:2062
 #: src/emc/usr_intf/gscreen/gscreen.glade:3096
@@ -15083,7 +15161,7 @@ msgid ""
 "Offsets"
 msgstr ""
 "显示\n"
-"   偏置"
+"偏移"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:2079
 msgid ""
@@ -15091,7 +15169,7 @@ msgid ""
 "DTG"
 msgstr ""
 "显示\n"
-"   DTG"
+"DTG"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:2096
 msgid ""
@@ -15106,7 +15184,7 @@ msgid ""
 " On M7 Use\n"
 "Aux Coolant"
 msgstr ""
-" 在M7上使用\n"
+"在M7上使用\n"
 "辅助冷却"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:2131
@@ -15114,7 +15192,7 @@ msgid ""
 " On M8 Use\n"
 "Aux Coolant"
 msgstr ""
-" 在M8上使用\n"
+"在M8上使用\n"
 "辅助冷却"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:2144
@@ -15127,7 +15205,7 @@ msgid ""
 "Notification"
 msgstr ""
 "桌面\n"
-"   通知"
+"通知"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:2228
 #: src/emc/usr_intf/gscreen/gscreen.glade:2368
@@ -15213,18 +15291,18 @@ msgid ""
 "  View"
 msgstr ""
 "更改 \n"
-"  视图"
+"视图"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:2760
 msgid "Homing\n"
-msgstr "原点\n"
+msgstr "回零\n"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:2781
 msgid ""
 "Ignore\n"
 "Limits"
 msgstr ""
-"   忽略\n"
+"忽略\n"
 "限制"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:2810
@@ -15232,7 +15310,7 @@ msgid ""
 "    Set\n"
 "Override"
 msgstr ""
-"   设置\n"
+"设置\n"
 "倍率"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:2824
@@ -15252,7 +15330,7 @@ msgid ""
 "  Launch\n"
 "Keyboard"
 msgstr ""
-"   启动\n"
+"启动\n"
 "键盘"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:2868
@@ -15265,7 +15343,7 @@ msgid ""
 "    All"
 msgstr ""
 "消零 \n"
-"    所有"
+"所有"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:2967
 msgid ""
@@ -15273,7 +15351,7 @@ msgid ""
 "   Axis"
 msgstr ""
 "消零\n"
-"   轴"
+"轴"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:2979
 #: src/emc/usr_intf/gscreen/gscreen.glade:3084
@@ -15282,7 +15360,7 @@ msgid ""
 "Readout"
 msgstr ""
 "切换\n"
-"   读出"
+"读出"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:3004
 msgid ""
@@ -15290,7 +15368,7 @@ msgid ""
 "  Mode"
 msgstr ""
 "点动\n"
-"   模式"
+"模式"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:3016
 msgid ""
@@ -15298,7 +15376,7 @@ msgid ""
 "  System"
 msgstr ""
 "坐标\n"
-"   系统"
+"系统"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:3060
 msgid ""
@@ -15306,7 +15384,7 @@ msgid ""
 " Tool"
 msgstr ""
 "刀具\n"
-"   索引"
+"索引"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:3072
 msgid ""
@@ -15334,7 +15412,7 @@ msgid ""
 "   Stop"
 msgstr ""
 "可选\n"
-"   停止"
+"停止"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:3229
 msgid ""
@@ -15357,7 +15435,7 @@ msgid ""
 "   Feed\n"
 "Override"
 msgstr ""
-"   进给\n"
+"进给\n"
 "倍率"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:3298
@@ -15373,7 +15451,7 @@ msgid ""
 "  Rapid\n"
 "Override"
 msgstr ""
-"  空程\n"
+"空程\n"
 "倍率"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:3332
@@ -15381,7 +15459,7 @@ msgid ""
 "   Jog\n"
 "Speed"
 msgstr ""
-"  点动\n"
+"点动\n"
 "速度"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:3345
@@ -15389,7 +15467,7 @@ msgid ""
 "      Jog\n"
 "Increments"
 msgstr ""
-"  点动\n"
+"点动\n"
 "增量"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:3361
@@ -15406,7 +15484,7 @@ msgid ""
 "  View"
 msgstr ""
 "更改\n"
-"   视图"
+"视图"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:3431
 msgid ""
@@ -15421,7 +15499,7 @@ msgid ""
 "     Pan\n"
 "Horizontal"
 msgstr ""
-"   Pan\n"
+"Pan\n"
 "水平"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:3457
@@ -15429,7 +15507,7 @@ msgid ""
 "  Rotate\n"
 "Horiontal"
 msgstr ""
-" 旋转\n"
+"旋转\n"
 "水平"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:3470
@@ -15437,7 +15515,7 @@ msgid ""
 " Rotate\n"
 "Vertical"
 msgstr ""
-" 旋转\n"
+"旋转\n"
 "垂直"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:3491
@@ -15445,31 +15523,30 @@ msgid ""
 "Search\n"
 "  Bwd"
 msgstr ""
-"搜索\n"
-"  向前"
+"向前\n"
+"搜索"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:3503
 msgid ""
 "Search\n"
 "  Fwd"
 msgstr ""
-"搜索\n"
-"  向后"
+"向后\n"
+"搜索"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:3561
 msgid ""
 " Reload\n"
 "Program"
 msgstr ""
-" 刷新\n"
-"程序"
+"刷新"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:3604
 msgid ""
 " Clear\n"
 "status"
 msgstr ""
-" 清除\n"
+"清除\n"
 "状态"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:3634
@@ -15515,7 +15592,7 @@ msgid ""
 " Line\n"
 "Down"
 msgstr ""
-" 行\n"
+"行\n"
 "向下"
 
 #: src/emc/usr_intf/gscreen/gscreen.glade:4028
@@ -15614,6 +15691,23 @@ msgstr "将刀具表重新加载到linuxcnc失败"
 #: lib/python/gladevcp/tooledit_widget.py:322
 msgid "Tool file was modified since it was last read"
 msgstr "刀具文件自上次读取后被修改"
+
+#: lib/python/gladevcp/gladevcp-test.glade:103
+#: lib/python/gladevcp/gladevcp-test.glade:119
+msgid "radiobutton"
+msgstr "单选按钮"
+
+#: lib/python/gladevcp/gladevcp-test.glade:159
+msgid "checkbutton"
+msgstr "检查按钮"
+
+#: lib/python/gladevcp/gladevcp-test.glade:183
+msgid "button"
+msgstr "按钮"
+
+#: lib/python/gladevcp/gladevcp-test.glade:194
+msgid "togglebutton"
+msgstr "切换按钮"
 
 #: lib/python/gladevcp/offsetpage.glade:285
 msgid "Offset"
@@ -16032,7 +16126,7 @@ msgstr "M7x: restore_settings 执行失败: '%s': %s"
 
 #: src/emc/rs274ngc/interp_convert.cc:2905
 msgid "Cannot set motion output with cutter radius compensation on"
-msgstr "無法設置 運動 輸出 當 刀具半徑補償 開"
+msgstr "刀具半径补偿打开时，不能设置运动输出"
 
 #: src/emc/rs274ngc/interp_convert.cc:2906
 msgid "No valid P word with M62"
@@ -16040,7 +16134,7 @@ msgstr "M62没有有效的P字"
 
 #: src/emc/rs274ngc/interp_convert.cc:2910
 msgid "Cannot set motion digital output with cutter radius compensation on"
-msgstr "無法設置附屬數碼輸出當刀具半徑補償在使用"
+msgstr "刀具半径补偿打开时，不能设置运动数字输出"
 
 #: src/emc/rs274ngc/interp_convert.cc:2911
 msgid "No valid P word with M63"
@@ -16049,7 +16143,7 @@ msgstr "M63没有有效的P字"
 #: src/emc/rs274ngc/interp_convert.cc:2915
 #: src/emc/rs274ngc/interp_convert.cc:2920
 msgid "Cannot set auxiliary digital output with cutter radius compensation on"
-msgstr "無法設置附屬數碼輸出當刀具半徑補償在使用"
+msgstr "刀具半径补偿打开时，不能设置辅助数字输出"
 
 #: src/emc/rs274ngc/interp_convert.cc:2916
 msgid "No valid P word with M64"
@@ -16073,7 +16167,7 @@ msgstr "刀具半径补偿开启时，不能等待模拟输入"
 
 #: src/emc/rs274ngc/interp_convert.cc:2993
 msgid "Cannot set motion analog output with cutter radius compensation on"
-msgstr "无法通过刀具半径补偿设置运动模拟输出"
+msgstr "刀具半径补偿开启时，不能设置运动模拟输出"
 
 #: src/emc/rs274ngc/interp_convert.cc:2994
 msgid "Invalid analog index with M67"
@@ -16081,7 +16175,7 @@ msgstr "模拟索引与M67无效"
 
 #: src/emc/rs274ngc/interp_convert.cc:3000
 msgid "Cannot set auxiliary analog output with cutter radius compensation on"
-msgstr "无法设置带刀具半径补偿的辅助模拟输出"
+msgstr "刀具半径补偿开启时，不能设置辅助模拟输出"
 
 #: src/emc/rs274ngc/interp_convert.cc:3001
 msgid "Invalid analog index with M68"
@@ -16227,7 +16321,7 @@ msgstr "使用刀具半径补偿时不能改变刀具补偿"
 
 #: src/emc/rs274ngc/interp_convert.cc:5187
 msgid "G43.2: H-word missing"
-msgstr "G87 缺少 I字"
+msgstr "G43.2:缺少H字"
 
 #: src/emc/rs274ngc/interp_queue.cc:590
 #, c-format

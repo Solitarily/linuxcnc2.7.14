@@ -56,11 +56,11 @@ TCLSRCS := \
 	../tcl/tooledit.tcl
 
 TOOLI18NSRCS := \
-        ../lib/python/gladevcp/iconview.py \
-        ../lib/python/gladevcp/hal_mdihistory.py \
+    ../lib/python/gladevcp/iconview.py \
+    ../lib/python/gladevcp/hal_mdihistory.py \
 	../lib/python/gladevcp/offsetpage_widget.py \
 	../lib/python/gladevcp/tooledit_widget.py \
-	../lib/python/gladevcp/offsetpage.glade \
+    ../lib/python/gladevcp/gladevcp-test.glade \
 	../lib/python/gladevcp/offsetpage.glade \
 	../lib/python/gladevcp/tooledit_gtk.glade
 

@@ -538,7 +538,7 @@ msgstr "向下"
 
 #: src/emc/usr_intf/gmoccapy/getiniinfo.py:279
 msgid "**** GMOCCAPY GETINIINFO ****\n"
-msgstr ""
+msgstr "**** GMOCCAPY 获取INI信息****\n"
 
 #: src/emc/usr_intf/gmoccapy/getiniinfo.py:280
 msgid ""
@@ -1329,19 +1329,19 @@ msgstr "编辑偏移量"
 
 #: src/emc/usr_intf/gmoccapy/gmoccapy.glade:6077
 msgid "touch off X / set X to 0"
-msgstr "将轴X的值设置为"
+msgstr "将轴X的值设置为0"
 
 #: src/emc/usr_intf/gmoccapy/gmoccapy.glade:6101
 msgid "touch off Y / set Y to 0"
-msgstr "将轴X的值设置为"
+msgstr "将轴Y的值设置为0"
 
 #: src/emc/usr_intf/gmoccapy/gmoccapy.glade:6136
 msgid "touch off Z / set Z to 0"
-msgstr "将轴X的值设置为"
+msgstr "将轴Z的值设置为0"
 
 #: src/emc/usr_intf/gmoccapy/gmoccapy.glade:6143
 msgid "touch off z / set z to 0"
-msgstr "将轴X的值设置为"
+msgstr "将轴Z的值设置为0"
 
 #: src/emc/usr_intf/gmoccapy/gmoccapy.glade:6156
 msgid ""
